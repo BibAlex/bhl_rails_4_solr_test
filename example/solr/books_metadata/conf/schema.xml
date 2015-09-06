@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.5">
+	<field name="_version_" type="long" indexed="true" stored="true"/> 
+	<field name="job_id" type="int" indexed="true" stored="true" required="true"/>
+	<field name="bib_id" type="string" indexed="true" stored="true" required="true"/>
+	<field name="date" type="date" indexed="true" stored="true" required="false"/>
+	<field name="rate" type="float" indexed="true" stored="true" required="false"/>
+	<field name="views" type="int" indexed="true" stored="true" required="false"/>
+	
+	<field name="language_facet" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
+
+	<field name="location_facet" type="string" indexed="true" stored="true" required="false" multiValued="true"/> <!-- city, logitude, latitude -->
+	<field name="location_search" type="text_en" indexed="true" stored="true" multiValued="true"/> <!-- city -->
+
+	<field name="content_ar" type="text_ar" indexed="true" stored="false" required="false"/>
+	<field name="content_en" type="text_en" indexed="true" stored="false" required="false"/>
+	<field name="content_fr" type="text_fr" indexed="true" stored="false" required="false"/>
+	<field name="content_ge" type="text_ge" indexed="true" stored="false" required="false"/>
+	<field name="content_it" type="text_it" indexed="true" stored="false" required="false"/>
+	<field name="content_ud" type="text_ud" indexed="true" stored="false" required="false"/>
+
+
+	<field name="title_ar" type="text_ar" indexed="true" stored="true" multiValued="true" required="false"  termVectors="true" termPositions="true" termOffsets="true" omitNorms="true"/>
+	<field name="author_ar" type="text_ar" indexed="true" stored="true" multiValued="true"  termVectors="true" termPositions="true" termOffsets="true" omitNorms="true"/>
+	<field name="publisher_ar" type="text_ar" indexed="true" stored="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true" omitNorms="true"/>
+	<field name="subject_ar" type="text_ar" indexed="true" stored="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true" omitNorms="true"/>
+	
+	<field name="title_en" type="text_en" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_en" type="text_en" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_en" type="text_en" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_en" type="text_en" indexed="true" stored="true" multiValued="true"/>
+	
+	<field name="title_fr" type="text_fr" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_fr" type="text_fr" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_fr" type="text_fr" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_fr" type="text_fr" indexed="true" stored="true" multiValued="true"/>
+
+	<field name="title_ge" type="text_ge" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_ge" type="text_ge" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_ge" type="text_ge" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_ge" type="text_ge" indexed="true" stored="true" multiValued="true"/>
+	
+	<field name="title_it" type="text_it" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_it" type="text_it" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_it" type="text_it" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_it" type="text_it" indexed="true" stored="true" multiValued="true"/>
+
+	<field name="title_ud" type="text_ud" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_ud" type="text_ud" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_ud" type="text_ud" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_ud" type="text_ud" indexed="true" stored="true" multiValued="true"/>
+
+		   
+	<field name="title_ar_exact" type="text_exact_ar" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_ar_exact" type="text_exact_ar" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_ar_exact" type="text_exact_ar" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_ar_exact" type="text_exact_ar" indexed="true" stored="true" multiValued="true"/>
+
+	<field name="title_en_exact" type="text_exact_en" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_en_exact" type="text_exact_en" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_en_exact" type="text_exact_en" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_en_exact" type="text_exact_en" indexed="true" stored="true" multiValued="true"/>
+
+	<field name="title_fr_exact" type="text_exact_fr" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_fr_exact" type="text_exact_fr" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_fr_exact" type="text_exact_fr" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_fr_exact" type="text_exact_fr" indexed="true" stored="true" multiValued="true"/>
+	
+	<field name="title_ge_exact" type="text_exact_ge" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_ge_exact" type="text_exact_ge" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_ge_exact" type="text_exact_ge" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_ge_exact" type="text_exact_ge" indexed="true" stored="true" multiValued="true"/>
+	
+	<field name="title_it_exact" type="text_exact_it" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_it_exact" type="text_exact_it" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_it_exact" type="text_exact_it" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_it_exact" type="text_exact_it" indexed="true" stored="true" multiValued="true"/>
+
+	<field name="title_ud_exact" type="text_exact_ud" indexed="true" stored="true" multiValued="true" required="false"/>
+	<field name="author_ud_exact" type="text_exact_ud" indexed="true" stored="true" multiValued="true"/>
+	<field name="publisher_ud_exact" type="text_exact_ud" indexed="true" stored="true" multiValued="true"/>
+	<field name="subject_ud_exact" type="text_exact_ud" indexed="true" stored="true" multiValued="true"/>
+
+
+	<field name="title_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+	<field name="author_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+	<field name="publisher_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+	<field name="subject_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+
+	<field name="title_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+	<field name="author_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+	<field name="publisher_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+	<field name="subject_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+
+	<field name="title_spell" type="textSpell" indexed="true" stored="false" multiValued="true" />
+
+	<copyField source="title_ar" dest="title_ar_exact" />
+	<copyField source="author_ar" dest="author_ar_exact"/>
+	<copyField source="publisher_ar" dest="publisher_ar_exact"/>
+	<copyField source="subject_ar" dest="subject_ar_exact"/>
+
+	<copyField source="title_en" dest="title_en_exact"/>
+	<copyField source="author_en" dest="author_en_exact"/>
+	<copyField source="publisher_en" dest="publisher_en_exact"/>
+	<copyField source="subject_en" dest="subject_en_exact"/>
+
+	<copyField source="title_fr" dest="title_fr_exact"/>
+	<copyField source="author_fr" dest="author_fr_exact"/>
+	<copyField source="publisher_fr" dest="publisher_fr_exact"/>
+	<copyField source="subject_fr" dest="subject_fr_exact"/>
+
+	<copyField source="title_ge" dest="title_ge_exact"/>
+	<copyField source="author_ge" dest="author_ge_exact"/>
+	<copyField source="publisher_ge" dest="publisher_ge_exact"/>
+	<copyField source="subject_ge" dest="subject_ge_exact"/>
+
+	<copyField source="title_it" dest="title_it_exact"/>
+	<copyField source="author_it" dest="author_it_exact"/>
+	<copyField source="publisher_it" dest="publisher_it_exact"/>
+	<copyField source="subject_it" dest="subject_it_exact"/>
+
+	<copyField source="title_ud" dest="title_ud_exact"/>
+	<copyField source="author_ud" dest="author_ud_exact"/>
+	<copyField source="publisher_ud" dest="publisher_ud_exact"/>
+	<copyField source="subject_ud" dest="subject_ud_exact"/>
+
+	<copyField source="title_ar" dest="title_auto" />
+	<copyField source="title_en" dest="title_auto" />
+	<copyField source="title_fr" dest="title_auto" />
+	<copyField source="title_ge" dest="title_auto" />
+	<copyField source="title_it" dest="title_auto" />
+	<copyField source="title_ud" dest="title_auto" />
+
+	<copyField source="subject_ar" dest="subject_auto" />
+	<copyField source="subject_en" dest="subject_auto" />
+	<copyField source="subject_fr" dest="subject_auto" />
+	<copyField source="subject_ge" dest="subject_auto" />
+	<copyField source="subject_it" dest="subject_auto" />
+	<copyField source="subject_ud" dest="subject_auto" />
+
+	<copyField source="author_ar" dest="author_auto" />
+	<copyField source="author_en" dest="author_auto" />
+	<copyField source="author_fr" dest="author_auto" />
+	<copyField source="author_ge" dest="author_auto" />
+	<copyField source="author_it" dest="author_auto" />
+	<copyField source="author_ud" dest="author_auto" />
+
+	<copyField source="publisher_ar" dest="publisher_auto" />
+	<copyField source="publisher_en" dest="publisher_auto" />
+	<copyField source="publisher_fr" dest="publisher_auto" />
+	<copyField source="publisher_ge" dest="publisher_auto" />
+	<copyField source="publisher_it" dest="publisher_auto" />
+	<copyField source="publisher_ud" dest="publisher_auto" />
+
+	<copyField source="title_ar" dest="title_facet" />
+	<copyField source="title_en" dest="title_facet" />
+	<copyField source="title_fr" dest="title_facet" />
+	<copyField source="title_ge" dest="title_facet" />
+	<copyField source="title_it" dest="title_facet" />
+	<copyField source="title_ud" dest="title_facet" />
+
+	<copyField source="subject_ar" dest="subject_facet" />
+	<copyField source="subject_en" dest="subject_facet" />
+	<copyField source="subject_fr" dest="subject_facet" />
+	<copyField source="subject_ge" dest="subject_facet" />
+	<copyField source="subject_it" dest="subject_facet" />
+	<copyField source="subject_ud" dest="subject_facet" />
+
+	<copyField source="author_ar" dest="author_facet" />
+	<copyField source="author_en" dest="author_facet" />
+	<copyField source="author_fr" dest="author_facet" />
+	<copyField source="author_ge" dest="author_facet" />
+	<copyField source="author_it" dest="author_facet" />
+	<copyField source="author_ud" dest="author_facet" />
+
+	<copyField source="publisher_ar" dest="publisher_facet" />
+	<copyField source="publisher_en" dest="publisher_facet" />
+	<copyField source="publisher_fr" dest="publisher_facet" />
+	<copyField source="publisher_ge" dest="publisher_facet" />
+	<copyField source="publisher_it" dest="publisher_facet" />
+	<copyField source="publisher_ud" dest="publisher_facet" />
+
+	<copyField source="title_ar" dest="title_spell" />
+	<copyField source="title_en" dest="title_spell" />
+	<copyField source="title_fr" dest="title_spell" />
+	<copyField source="title_ge" dest="title_spell" />
+	<copyField source="title_it" dest="title_spell" />
+	<copyField source="title_ud" dest="title_spell" />
+
+	<uniqueKey>job_id</uniqueKey>
+
+	<fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+	<fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="auto_facet" class="solr.TextField">
+		<analyzer> 
+			<tokenizer class="solr.KeywordTokenizerFactory"/>
+			<filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicTashkilFilterFactory"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	<fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100" omitNorms="true">
+            <analyzer >
+                <tokenizer class="solr.StandardTokenizerFactory" />
+                <filter class="solr.LowerCaseFilterFactory" />
+                <filter class="solr.StandardFilterFactory" />
+            </analyzer>
+        </fieldType>
+
+
+	<fieldType name="text_ar" class="solr.TextField">
+		<analyzer type="index"> 
+		       <tokenizer class="solr.StandardTokenizerFactory"/>
+		       <filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicTashkilFilterFactory"/>
+		       <filter class="solr.LowerCaseFilterFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicNormalizerFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicStemmerReplicatorRooterizerFactory"/>
+		       <filter class="solr.LengthFilterFactory" min="1" max="2147483647" />
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicNormalizerFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.DeduplicatorFactory"/>
+		</analyzer>
+		<analyzer type="query"> 
+		       <tokenizer class="solr.StandardTokenizerFactory"/>
+		       <filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicTashkilFilterFactory"/>
+		       <filter class="solr.LowerCaseFilterFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicNormalizerFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicStemmerReplicatorFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicNormalizerFactory"/>
+		       <filter class="gpl.pierrick.brihaye.aramorph.solr.DeduplicatorFactory"/>
+		</analyzer>
+	</fieldType>		
+	<fieldType name="text_exact_ar" class="solr.TextField">
+		<analyzer> 
+			<tokenizer class="solr.StandardTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicTashkilFilterFactory"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="gpl.pierrick.brihaye.aramorph.solr.DeduplicatorFactory"/>
+		      </analyzer>
+	</fieldType>
+	<fieldType name="text_en" class="solr.TextField">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_en.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="English" protected="protwords_en.txt"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_en.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="English" protected="protwords_en.txt"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
+	<fieldType name="text_exact_en" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	<fieldType name="text_ge" class="solr.TextField">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_de.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="German" protected="protwords_de.txt"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_de.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="German" protected="protwords_de.txt"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
+	<fieldType name="text_exact_ge" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	<fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_fr.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="French" protected="protwords_fr.txt"/>
+			<!--<filter class="solr.ElisionFilterFactory"/>-->
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_fr.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.SnowballPorterFilterFactory" language="French" protected="protwords_fr.txt"/>
+			<!--<filter class="solr.ElisionFilterFactory"/>-->
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	
+	<fieldType name="text_exact_fr" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	<fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_it.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ItalianLightStemFilterFactory"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords_it.txt"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ItalianLightStemFilterFactory"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
+	<fieldType name="text_exact_it" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+			<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	<fieldType name="text_ud" class="solr.TextField">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
+	<fieldType name="text_exact_ud" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.LimitTokenCountFilterFactory" maxTokenCount="2147483647"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+			<filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+		</analyzer>
+	</fieldType>
+
+	
+
+</schema>
+
