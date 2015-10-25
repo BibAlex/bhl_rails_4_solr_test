@@ -86,6 +86,9 @@
 	<field name="author_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
 	<field name="publisher_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
 	<field name="subject_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+	<field name="language_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+	<field name="location_auto" type="auto_facet" indexed="true" stored="false" multiValued="true"/>
+
 
 	<field name="title_facet" type="string" indexed="true" stored="false" multiValued="true"/>
 	<field name="author_facet" type="string" indexed="true" stored="false" multiValued="true"/>
@@ -152,6 +155,10 @@
 	<copyField source="publisher_it" dest="publisher_auto" />
 	<copyField source="publisher_ud" dest="publisher_auto" />
 
+	<copyField source="language_facet" dest="language_auto" />
+	<copyField source="location_search" dest="location_auto" />
+
+
 	<copyField source="title_ar" dest="title_facet" />
 	<copyField source="title_en" dest="title_facet" />
 	<copyField source="title_fr" dest="title_facet" />
@@ -199,6 +206,7 @@
 			<tokenizer class="solr.KeywordTokenizerFactory"/>
 			<filter class="gpl.pierrick.brihaye.aramorph.solr.ArabicTashkilFilterFactory"/>
 			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.TrimFilterFactory"/>
 		</analyzer>
 	</fieldType>
 	<fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100" omitNorms="true">
