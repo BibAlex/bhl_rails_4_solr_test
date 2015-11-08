@@ -11,6 +11,8 @@
 
 	<field name="location_facet" type="string" indexed="true" stored="true" required="false" multiValued="true"/> <!-- city, logitude, latitude -->
 	<field name="location_search" type="text_en" indexed="true" stored="true" multiValued="true"/> <!-- city -->
+	<field name="title_sort" type="string" indexed="true" stored="false" multiValued="false"/>
+
 
 	<field name="content_ar" type="text_ar" indexed="true" stored="false" required="false"/>
 	<field name="content_en" type="text_en" indexed="true" stored="false" required="false"/>
@@ -96,6 +98,7 @@
 	<field name="subject_facet" type="string" indexed="true" stored="false" multiValued="true"/>
 
 	<field name="title_spell" type="textSpell" indexed="true" stored="false" multiValued="true" />
+	
 
 	<copyField source="title_ar" dest="title_ar_exact" />
 	<copyField source="author_ar" dest="author_ar_exact"/>
